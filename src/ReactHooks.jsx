@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-
-
 const ReactHooks = () => {
     
     const [counter, setCounter] = useState(0);
