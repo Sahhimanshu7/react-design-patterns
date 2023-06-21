@@ -1,4 +1,5 @@
 import './App.css';
+import ReactHooks from './ReactHooks';
 
 const handleClick = (e) =>{
   const toggleButton = e.target.classList;
@@ -17,7 +18,8 @@ const App = () =>{
 
   return(
     <div>
-      <button onClick={handleClick} className='off'>Click Me!</button>      
+      <button onClick={handleClick} className='off'>Click Me!</button>   
+      <ReactHooks />  
     </div>
   )
 }
