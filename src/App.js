@@ -1,9 +1,6 @@
 import './App.css';
 import ReactHooks from './ReactHooks';
-import { useState } from 'react';
-import renderIf from 'react-only-if';
-
-
+import { useState, useEffect } from 'react';
 
 const handleClick = (e) =>{
   const toggleButton = e.target.classList;
@@ -19,22 +16,23 @@ const handleClick = (e) =>{
 } 
 const App = () =>{
   const [counterStatus, setCounterStatus] = useState(false);
-  const stateChanger = () => {
-    setCounterStatus(true);
-  }
-  const IsCounterOn = renderIf(counterStatus == true);
+  
+  const IsCounterOn = counterStatus;
+
   return(
     <div>
       <button onClick={(e)=>{
         handleClick(e);
-        stateChanger();
+        if (counterStatus == false) {
+          setCounterStatus(true); 
+        } else {
+          setCounterStatus(false); 
+        }
         }} 
         className='off'>
           Load counter
       </button>  
-      {IsCounterOn(
-          <ReactHooks /> 
-      )} 
+      { IsCounterOn && <ReactHooks /> } 
     </div>
   )
 }
