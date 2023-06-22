@@ -1,6 +1,7 @@
 import './App.css';
 import ReactHooks from './ReactHooks';
 import { useState, useEffect } from 'react';
+import Todo from './Todo';
 
 const handleClick = (e) =>{
   const toggleButton = e.target.classList;
@@ -33,6 +34,7 @@ const App = () =>{
           Load counter
       </button>  
       { IsCounterOn && <ReactHooks /> } 
+      <Todo />
     </div>
   )
 }
